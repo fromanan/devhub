@@ -1,0 +1,8 @@
+@base: #f04615;
+@width: 0.5;
+
+.class {
+  width: percentage(@width); // returns &#x60;50%&#x60;
+  color: saturate(@base, 5%);
+  background-color: spin(lighten(@base, 25%), 8);
+}
