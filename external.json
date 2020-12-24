@@ -1,0 +1,20 @@
+{
+    "https://app.clickup.com/2324674": {
+        "title": "Clickup",
+        "description": "",
+        "color": "item-primary",
+        "icon": "<span aria-hidden=\"true\" class=\"icon_documents_alt icon\"></span>"
+    },
+    "https://mail.starforged.net/": {
+        "title": "Mail",
+        "description": "Demo example, consectetuer adipiscing elit",
+        "color": "item-green",
+        "icon": "<i class=\"icon fa fa-paper-plane\"></i>"
+    },
+    "charts.html": {
+        "title": "GDD",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
+        "color": "item-blue",
+        "icon": "<span aria-hidden=\"true\" class=\"icon icon_datareport_alt\"></span>"
+    }
+}

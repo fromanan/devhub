@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="80b6cedf-fe41-49ce-b493-868b6516f5df" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.0">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1YmgVJ8voHIsaVwxR1zVnkYoQkc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\OneDrive\Desktop\StarForged\StarForged_Documentation" />
+      <recent name="H:\OneDrive\Desktop\Downloads\" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Frost\Downloads\StarForged_Documentation\assets\css" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="80b6cedf-fe41-49ce-b493-868b6516f5df" name="Default Changelist" comment="" />
+      <created>1583553205477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583553205477</updated>
+      <workItem from="1583553206873" duration="2379000" />
+      <workItem from="1583556679613" duration="1356000" />
+      <workItem from="1583607370323" duration="8344000" />
+      <workItem from="1583620250925" duration="13096000" />
+      <workItem from="1583682395346" duration="44000" />
+      <workItem from="1583729784969" duration="96000" />
+      <workItem from="1584671867252" duration="756000" />
+      <workItem from="1584674157812" duration="12000" />
+      <workItem from="1585190870617" duration="3746000" />
+      <workItem from="1585243881612" duration="25000" />
+      <workItem from="1585244244291" duration="56000" />
+      <workItem from="1585357658956" duration="1163000" />
+      <workItem from="1586266945580" duration="50000" />
+      <workItem from="1591141899169" duration="1694000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="251" y="0" key="#CLI_Interpreters" timestamp="1583608168954">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="251" y="0" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1583608168954" />
+    <state x="618" y="221" key="#Deployment" timestamp="1591142995085">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="618" y="221" key="#Deployment/0.0.2048.1112@0.0.2048.1112" timestamp="1591142995085" />
+    <state x="262" y="0" key="#JSON" timestamp="1583633418632">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="262" y="0" key="#JSON/0.0.1536.824@0.0.1536.824" timestamp="1583633418632" />
+    <state x="435" y="0" key="#PHP" timestamp="1583608179253">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="435" y="0" key="#PHP/0.0.1536.824@0.0.1536.824" timestamp="1583608179253" />
+    <state x="225" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583612122508">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="225" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1583612122508" />
+    <state x="473" y="198" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583639066928">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="473" y="198" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1583639066928" />
+    <state x="523" y="62" key="#com.intellij.ide.util.MemberChooser" timestamp="1583626356692">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="523" y="62" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583626356692" />
+    <state x="705" y="292" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584674126106">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="705" y="292" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1584674126106" />
+    <state x="468" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583625123653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="468" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1583625123653" />
+    <state x="515" y="313" key="ComposerInitDialogKey" timestamp="1583556863208">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="515" y="313" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1583556863208" />
+    <state x="354" y="142" key="EditFileWatcherDialog" timestamp="1583637941103">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="354" y="142" key="EditFileWatcherDialog/0.0.1536.824@0.0.1536.824" timestamp="1583637941103" />
+    <state x="667" y="150" key="FileChooserDialogImpl" timestamp="1591142980609">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="500" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583557585576" />
+    <state x="667" y="150" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1591142980609" />
+    <state x="446" y="187" key="NewPhpClassDialog" timestamp="1583639267502">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="446" y="187" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1583639267502" />
+    <state x="582" y="322" key="NewPhpFileDialog" timestamp="1583638505649">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="582" y="322" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1583638505649" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1583557363836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583557363836" />
+    <state x="537" y="265" key="com.intellij.ide.util.TipDialog" timestamp="1586266945651">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="403" y="196" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583607372454" />
+    <state x="537" y="265" key="com.intellij.ide.util.TipDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1586266945651" />
+    <state x="531" y="101" width="987" height="910" key="find.popup" timestamp="1591142896760">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="398" y="75" width="740" height="674" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1583635067463" />
+    <state x="531" y="101" width="987" height="910" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1591142896760" />
+    <state x="840" y="287" key="ftp.server.browser" timestamp="1585244286412">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="840" y="287" key="ftp.server.browser/0.0.2048.1112@0.0.2048.1112" timestamp="1585244286412" />
+    <state x="456" y="0" width="1120" height="1110" key="search.everywhere.popup" timestamp="1585358220198">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="342" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583622857638" />
+    <state x="456" y="0" width="1120" height="1110" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1585358220198" />
+  </component>
+</project>

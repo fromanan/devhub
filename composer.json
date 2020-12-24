@@ -1,0 +1,9 @@
+{
+  "autoload": {
+    "psr-4": {"StarForged\\": "lib/StarForged"}
+  },
+  "require": {
+    "phpunit/phpunit": "6",
+    "ext-json": "*"
+  }
+}
