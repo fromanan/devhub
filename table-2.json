@@ -1,0 +1,21 @@
+{
+    "title": "Striped Table",
+    "num-cols": 3,
+    "num-rows": 3,
+    "headers": [
+        "First Name",
+        "Last Name",
+        "Username"
+    ],
+    "rows": [
+        [
+            "Mark", "Otto", "@mdo"
+        ],
+        [
+            "Jacob", "Thornton", "@fat"
+        ],
+        [
+            "Larry", "the Bird", "@twitter"
+        ]
+    ]
+}
