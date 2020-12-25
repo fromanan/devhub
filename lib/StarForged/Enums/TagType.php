@@ -1,7 +1,7 @@
 <?php
 
 
-namespace StarForged;
+namespace StarForged\Enums;
 
 
 class TagType
@@ -15,5 +15,5 @@ class TagType
     const ANCHOR = 'a';
     const DIV = 'div';
     const OL = 'ol';
-    const LI = 'il';
+    const LI = 'li';
 }

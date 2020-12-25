@@ -8,7 +8,7 @@ class Card
 {
     public function __construct(string $color, string $title, string $body, string $link, string $icon)
     {
-        $this->color = $color;
+        $this->color = "item-" . $color;
         $this->title = $title;
         $this->body = $body;
         $this->link = $link;
@@ -31,9 +31,9 @@ class Card
 HTML;
     }
 
-    private $color = '';
-    private $title = '';
-    private $body = '';
-    private $link = '';
-    private $icon = '';
+    private string $color;
+    private string $title;
+    private string $body;
+    private string $link;
+    private string $icon;
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace StarForged;
+namespace StarForged\Enums;
 
 
 class TableType

@@ -3,19 +3,21 @@
 
 namespace StarForged;
 
+use StarForged\Enums\TagType as TagType;
+
 
 class Breadcrumbs
 {
     public function __construct(Site $site, string $url, string $name)
     {
-        $body = "";
+        $homeTag = new Tag(TagType::LI, "<a href=\"index.php\">Home</a>", ["breadcrumb-item"]);
+        $body = $homeTag->display();
 
         foreach (explode("/", $url) as $link)
         {
-            if ($link === "StarForged_Documentation")
-            {
-                $link = "index.php";
-            }
+            // Root Node
+            if ($link === "DevHub")
+                continue;
 
             $title = $site->getTitle($link);
 
@@ -32,6 +34,16 @@ class Breadcrumbs
         }
 
         $breadcrumbs = new Tag(TagType::OL, $body, ["breadcrumb"]);
-        echo $breadcrumbs->display();
+        $this->html = $breadcrumbs->display();
     }
+
+    /**
+     * @return mixed
+     */
+    public function display() : string
+    {
+        return $this->html;
+    }
+
+    private string $html;
 }

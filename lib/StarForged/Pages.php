@@ -4,10 +4,12 @@
 namespace StarForged;
 
 
-class Pages implements \Iterator
+use Iterator;
+
+class Pages implements Iterator
 {
-    private $position = 0;
-    private $pages =
+    private int $position;
+    private array $pages =
     [
         "index.php" =>
             [
@@ -23,35 +25,35 @@ class Pages implements \Iterator
                 "color" => Color::GREEN,
                 "icon" => "<i class=\"icon fa fa-paper-plane\"></i>"
             ],
-        "charts.html" =>
+        "charts.php" =>
             [
                 "title" => "GDD",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
                 "color" => Color::BLUE,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_datareport_alt\"></span>"
             ],
-        "components.html" =>
+        "components.php" =>
             [
                 "title" => "Class Documentation",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
                 "color" => Color::PINK,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_puzzle_alt\"></span>"
             ],
-        "faqs.html" =>
+        "faqs.php" =>
             [
                 "title" => "FAQs",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
                 "color" => Color::PURPLE,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_lifesaver\"></span>"
             ],
-        "showcase.html" =>
+        "showcase.php" =>
             [
                 "title" => "Showcase",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
                 "color" => Color::PRIMARY,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_genius\"></span>"
             ],
-        "license.html" =>
+        "license.php" =>
             [
                 "title" => "License &amp; Credits",
                 "description" => "Layout for license &amp; credits page. Consectetuer adipiscing elit.",
@@ -60,13 +62,13 @@ class Pages implements \Iterator
             ],
     ];
 
-    public function encodeAndSave()
+    public function encodeAndSave() : void
     {
         $jsonData = json_encode($this->pages);
 
-        $myfile = fopen("pages.json", "w") or die("Unable to open file!");
-        fwrite($myfile, $jsonData);
-        fclose($myfile);
+        $file = fopen("pages.json", "w") or die("Unable to open file!");
+        fwrite($file, $jsonData);
+        fclose($file);
 
         echo $jsonData."\n";
     }
@@ -88,7 +90,7 @@ class Pages implements \Iterator
         return $this->array[$this->position];
     }
 
-    public function key()
+    public function key() : int
     {
         var_dump(__METHOD__);
         return $this->position;
@@ -100,7 +102,7 @@ class Pages implements \Iterator
         ++$this->position;
     }
 
-    public function valid()
+    public function valid() : bool
     {
         var_dump(__METHOD__);
         return isset($this->array[$this->position]);

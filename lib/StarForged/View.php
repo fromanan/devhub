@@ -1,6 +1,8 @@
 <?php
 
+
 namespace StarForged;
+
 
 class View
 {
@@ -11,17 +13,13 @@ class View
 
     public function head() : string
     {
-        return <<<HTML
-<meta charset="utf-8">
-<title>$this->title</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="lib/felis.css">
-HTML;
+        return $this->title() . $this->meta() . $this->resources();
     }
 
     public function meta() : string
     {
         return <<<HTML
+<!-- Meta -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,35 +28,18 @@ HTML;
 HTML;
     }
 
-    public function header() : string
+    public function header(Site $site, Breadcrumbs $breadcrumbs, Search $search) : string
     {
-        $html = <<<HTML
-<nav>
-    <ul class="left">
-        <li><a href="./">The Felis Agency</a></li>
-    </ul>
-HTML;
+        $html = "<!-- ******Header****** --><header id=\"header\" class=\"header\"><div class=\"container\">";
 
-        if(count($this->links) > 0) {
-            $html .= '<ul class="right">';
-            foreach($this->links as $link) {
-                $html .= '<li><a href="' .
-                    $link['href'] . '">' .
-                    $link['text'] . '</a></li>';
-            }
-            $html .= '</ul>';
-        }
+        $html .= "<div class=\"branding\">" . $site->showLogo(true) . "</div><!--//branding-->";
 
-        $additional = $this->headerAdditional();
+        $html .= $breadcrumbs->display();
 
-        $html .= <<<HTML
-</nav>
-<header class="main">
-    <h1><img src="images/comfortable.png" alt="Felis Mascot"> $this->title
-    <img src="images/comfortable.png" alt="Felis Mascot"></h1>
-    $additional
-</header>
-HTML;
+        $html .= $search->display();
+
+        $html .= "</div><!--//container--></header><!--//header-->";
+
         return $html;
     }
 
@@ -75,7 +56,7 @@ HTML;
 HTML;
     }
 
-    public function setTitle($title)
+    public function setTitle($title) : void
     {
         $this->title = $title;
     }
@@ -86,7 +67,7 @@ HTML;
         return $title->display();
     }
 
-    public function addLink($href, $text)
+    public function addLink($href, $text) : void
     {
         $this->links[] = ["href" => $href, "text" => $text];
     }
@@ -100,13 +81,14 @@ HTML;
     {
         return <<<HTML
 <link rel="shortcut icon" href="favicon.ico">  
-<link href="assets/css/open-sans.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="assets/css/open-sans.css" type="text/css">
 <!-- FontAwesome JS -->
 <script src="assets/js/all.js"></script>
 <!-- Global CSS -->
 <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
 <!-- Plugins CSS -->
 <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+<link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.css">
 <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">    
 <!-- Theme CSS -->
 <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
@@ -121,12 +103,12 @@ HTML;
 <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
 <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
 <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>   
 <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                                
 <script type="text/javascript" src="assets/js/main.js"></script>
 HTML;
-
     }
 
-    private $title = "";	// The page title
-    private $links = [];	// Links to add to the nav bar
+    private string $title;	// The page title
+    private array $links;	// Links to add to the nav bar
 }

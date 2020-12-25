@@ -1,0 +1,41 @@
+{
+  "Download" : {
+    "link" : "#download-section"
+  },
+  "Installation" : {
+    "link" : "#installation-section",
+    "sublinks" : {
+      "Step One" : "#step1",
+      "Step Two" : "#step2",
+      "Step Three" : "#step3"
+    }
+  },
+  "Code" : {
+    "link" : "#code-section",
+    "sublinks" : {
+      "HTML" : "#html",
+      "CSS" : "#css",
+      "Sass" : "#sass",
+      "LESS" : "#less",
+      "JavaScript" : "#javascript",
+      "Python" : "#python",
+      "PHP" : "#php",
+      "Handlebars" : "#handlebars"
+    }
+  },
+  "Callouts" : {
+    "link" : "#callouts-section"
+  },
+  "Tables" : {
+    "link" : "#tables-section"
+  },
+  "Buttons" : {
+    "link" : "#buttons-section"
+  },
+  "Video" : {
+    "link" : "#video-section"
+  },
+  "Icons" : {
+    "link" : "#icons-section"
+  }
+}

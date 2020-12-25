@@ -3,6 +3,8 @@
 
 namespace StarForged;
 
+use StarForged\Enums\TagType as TagType;
+
 
 class Site
 {
@@ -17,12 +19,12 @@ class Site
         return $this->logo;
     }
 
-    public function setLogo(string $title, string $subtitle)
+    public function setLogo(string $title, string $subtitle) : void
     {
         $this->logo = ["title" => $title, "subtitle" => $subtitle];
     }
 
-    public function showLogo(bool $link = false)
+    public function showLogo(bool $link = false) : string
     {
         $title = $this->logo["title"];
         $subtitle = $this->logo["subtitle"];
@@ -46,7 +48,7 @@ HTML;
         return $this->version;
     }
 
-    public function setVersion(string $version)
+    public function setVersion(string $version) : void
     {
         $this->version = $version;
     }
@@ -62,7 +64,7 @@ HTML;
         return $this->tagline;
     }
 
-    public function setTagline(string $tagline)
+    public function setTagline(string $tagline) : void
     {
         $this->tagline = $tagline;
     }
@@ -91,16 +93,26 @@ HTML;
         return "";
     }
 
+    public function getUpdated(string $pageName) : string
+    {
+        if (array_key_exists($pageName, $this->pages))
+        {
+            $date = date_format(date_create_from_format('m-d-y', $this->pages[$pageName]["updated"]), 'M jS, Y');
+            return "<div class=\"meta\"><i class=\"far fa-clock\"></i> Last updated: " . $date . "</div>";
+        }
+        return "";
+    }
+
     public function getPages(): array
     {
         return $this->pages;
     }
 
-    private $logo = [];
+    private array $logo = [];
 
-    private $version = '';
+    private string $version = '';
 
-    private $tagline = '';
+    private string $tagline = '';
 
-    private $pages = [];
+    private array $pages = [];
 }

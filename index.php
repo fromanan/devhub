@@ -1,20 +1,15 @@
 <?php
 require 'lib/site.inc.php';
-$name = basename($_SERVER['PHP_SELF']);
+$name = StarForged\Extensions::GetPageName();
 $view = new StarForged\View($site, $name);
 
 use StarForged\Cards as Cards;
-use StarForged\TagType as TagType;
+use StarForged\Enums\TagType as TagType;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <?php echo $view->title()?>
-    <?php echo $view->meta()?>
-    <?php echo $view->resources()?>
-</head> 
-
+<?php echo $view->head() ?>
 <body class="landing-page">
     <div class="page-wrapper">
 
@@ -28,7 +23,7 @@ use StarForged\TagType as TagType;
 
                 <?php echo $site->showTagline(TagType::DIV)?>
                 
-                <?php new StarForged\Search(["main-search-box", "pt-3", "pb-4", "d-inline-block"])?>
+                <?php echo (new StarForged\Search(["main-search-box", "pt-3", "pb-4", "d-inline-block"]))->display()?>
                 
             </div><!--//container-->
         </header><!--//header-->

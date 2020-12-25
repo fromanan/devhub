@@ -2,14 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80b6cedf-fe41-49ce-b493-868b6516f5df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/TableType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/table-1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/table-2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/table-3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/faqs-features.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/faqs-general.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/faqs-pricing.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/faqs-support.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/faqs-template.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sidebar-faqs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sidebar-start.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/Enums/ButtonType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/Enums/CTAType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/Enums/VideoRatio.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/Extensions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/Question.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/QuestionSection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/SideBar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/Video.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/charts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.html" beforeDir="false" afterPath="$PROJECT_DIR$/components.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/external.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/external.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faqs.html" beforeDir="false" afterPath="$PROJECT_DIR$/faqs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Breadcrumbs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Card.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Card.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/CodeLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/CodeLine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/CodeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Enums/CodeType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Pages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Site.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Site.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Table.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/TableType.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Enums/TableType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/TagType.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Enums/TagType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/StarForged/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/license.html" beforeDir="false" afterPath="$PROJECT_DIR$/license.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showcase.html" beforeDir="false" afterPath="$PROJECT_DIR$/showcase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/start.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table-1.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/table-1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table-2.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/table-2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table-3.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/table-3.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +83,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.0">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
@@ -80,6 +114,9 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1YmgVJ8voHIsaVwxR1zVnkYoQkc" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -90,6 +127,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -105,16 +143,22 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\StarForged Admin\Documents\Source\DevHub" />
       <recent name="D:\Source\StarForged_Documentation" />
       <recent name="H:\OneDrive\Desktop\StarForged\StarForged_Documentation" />
       <recent name="H:\OneDrive\Desktop\Downloads\" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StarForged Admin\Documents\Source\DevHub\data" />
+      <recent name="C:\Users\StarForged Admin\Documents\Source\DevHub\lib\StarForged\Enums" />
+      <recent name="C:\Users\StarForged Admin\Documents\Source\DevHub" />
+      <recent name="C:\Users\StarForged Admin\Documents\Source\DevHub\lib\StarForged" />
       <recent name="C:\Users\Frost\Downloads\StarForged_Documentation\assets\css" />
     </key>
   </component>
@@ -144,10 +188,23 @@
       <workItem from="1586266945580" duration="50000" />
       <workItem from="1591141899169" duration="1694000" />
       <workItem from="1608784422339" duration="7799000" />
+      <workItem from="1608842318338" duration="1291000" />
+      <workItem from="1608844894176" duration="15640000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

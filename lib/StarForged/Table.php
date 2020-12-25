@@ -13,12 +13,13 @@ class Table
      */
     public function __construct(string $filename, string $tableType = "")
     {
-        $pageData = json_decode(file_get_contents($filename), true);
+        $data = Extensions::LoadJson($filename);
+        $this->data = $data;
 
-        $this->num_rows = $pageData["num-rows"];
-        $this->num_cols = $pageData["num-cols"];
+        $this->num_rows = $data["num-rows"];
+        $this->num_cols = $data["num-cols"];
 
-        $html = "<h6>" . $pageData["title"] . "</h6>";
+        $html = "<h6>" . $data["title"] . "</h6>";
 
         $html .= "<div class=\"table-responsive\">";
 
@@ -31,7 +32,7 @@ class Table
         $html .= "\">";
 
         $html .= "<thead><tr><th>#</th>";
-        foreach ($pageData["headers"] as $header)
+        foreach ($data["headers"] as $header)
         {
             $html .= "<th>" . $header . "</th>";
         }
@@ -40,7 +41,7 @@ class Table
         $html .= "<tbody>";
         for ($i = 0; $i < $this->num_rows; $i++)
         {
-            $col = $pageData["rows"][$i];
+            $col = $data["rows"][$i];
             $html .= "<tr>";
             $html .= "<th scope=\"row\">" . ($i + 1) . "</th>";
             foreach ($col as $row)
@@ -58,6 +59,7 @@ class Table
         echo $html;
     }
 
-    private $num_rows;
-    private $num_cols;
+    private array $data;
+    private int $num_rows;
+    private int $num_cols;
 }

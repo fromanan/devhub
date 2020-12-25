@@ -4,6 +4,8 @@
 namespace StarForged;
 
 
+use JetBrains\PhpStorm\Pure;
+
 class Tag
 {
     public function __construct(string $tagType, string $body, array $classes = [])
@@ -13,12 +15,12 @@ class Tag
         $this->classes = $classes;
     }
 
-    public function addClass(string $className)
+    public function addClass(string $className) : void
     {
         $this->classes[] = $className;
     }
 
-    public function display() : string
+    #[Pure] public function display() : string
     {
         $html = "<$this->tagType";
 
@@ -36,7 +38,7 @@ class Tag
         return $html;
     }
 
-    private $tagType = '';
-    private $body = '';
-    private $classes = [];
+    private string $tagType;
+    private string $body;
+    private array $classes;
 }

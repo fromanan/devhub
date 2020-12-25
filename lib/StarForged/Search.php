@@ -3,12 +3,15 @@
 
 namespace StarForged;
 
+use StarForged\Enums\TagType as TagType;
+
 
 class Search
 {
 
     /**
      * Search constructor.
+     * @param array $classes
      */
     public function __construct(array $classes = [])
     {
@@ -23,6 +26,16 @@ class Search
 HTML;
         $tag = new Tag(TagType::DIV, $body, $classes);
 
-        echo $tag->display();
+        $this->html = $tag->display();
     }
+
+    /**
+     * @return string
+     */
+    public function display(): string
+    {
+        return $this->html;
+    }
+
+    private string $html;
 }

@@ -3,6 +3,8 @@
 
 namespace StarForged;
 
+use StarForged\Enums\TagType as TagType;
+
 
 class CodeLine
 {
