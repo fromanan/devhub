@@ -3,8 +3,6 @@
 
 namespace StarForged;
 
-use StarForged\Enums\TagType as TagType;
-
 
 class Site
 {
@@ -28,19 +26,11 @@ class Site
     {
         $title = $this->logo["title"];
         $subtitle = $this->logo["subtitle"];
-
-        $logo = <<<HTML
-<span aria-hidden="true" class="icon_documents_alt icon"></span>
-<span class="text-highlight">$title</span><span class="text-bold">&nbsp;$subtitle</span>
-HTML;
-
-        if ($link)
-        {
-            $logo = "<a href=\"index.php\">" . $logo ."</a>";
-        }
-
-        $tag = new Tag(TagType::HEADER1, $logo, ["logo"]);
-        return $tag->display();
+        $body = new Tag(Tag::SPAN, "", ["icon_documents_alt icon"], "", ["aria-hidden=\"true\""]);
+        $body .= new Tag(Tag::SPAN, $title, ["text-highlight"]);
+        $body .= new Tag(Tag::SPAN, "&nbsp;".$subtitle, ["text-bold"]);
+        if ($link) $body = new Link($body, "index.php");
+        return new Tag(Tag::HEADER1, $body, ["logo"]);
     }
 
     public function getVersion(): string
@@ -55,8 +45,7 @@ HTML;
 
     public function showVersion(string $tag): string
     {
-        $tag = new Tag($tag, $this->version, ["version"]);
-        return $tag->display();
+        return new Tag($tag, $this->version, ["version"]);
     }
 
     public function getTagline(): string
@@ -71,8 +60,7 @@ HTML;
 
     public function showTagline(string $tag): string
     {
-        $tag = new Tag($tag, $this->tagline, ["tagline"]);
-        return $tag->display();
+        return new Tag($tag, $this->tagline, ["tagline"]);
     }
 
     public function getTitle(string $pageName) : string
@@ -93,7 +81,7 @@ HTML;
         return "";
     }
 
-    public function getUpdated(string $pageName) : string
+    public function getLastUpdateDate(string $pageName) : string
     {
         if (array_key_exists($pageName, $this->pages))
         {
@@ -106,6 +94,15 @@ HTML;
     public function getPages(): array
     {
         return $this->pages;
+    }
+
+    public function getPage(string $key) : array
+    {
+        if (array_key_exists($key, $this->pages))
+        {
+            return $this->pages[$key];
+        }
+        return [];
     }
 
     private array $logo = [];

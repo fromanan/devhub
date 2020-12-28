@@ -3,39 +3,18 @@
 
 namespace StarForged;
 
-use StarForged\Enums\TagType as TagType;
 
-
-class Search
+class Search extends HtmlObject
 {
-
     /**
      * Search constructor.
      * @param array $classes
      */
     public function __construct(array $classes = [])
     {
-        $body = <<<HTML
- <form class="form-inline search-form justify-content-center" action="" method="get">
-
-    <input type="text" placeholder="Enter search terms..." name="search" class="form-control search-input">
-    
-    <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-    
-</form>
-HTML;
-        $tag = new Tag(TagType::DIV, $body, $classes);
-
-        $this->html = $tag->display();
+        $body = new Tag(Tag::INPUT, "", ["form-control", "search-input"], "", ["type=\"text\"", "placeholder=\"Enter search terms...\"", "name=\"search\""]);
+        $body .= new Tag(Tag::BUTTON, new Icon(Icon::SEARCH), ["btn", "search-btn"], "", ["type=\"submit\"", "value=\"Search\""]);
+        $form = new Tag(Tag::FORM, $body, ["form-inline", "search-form", "justify-content-center"], "", ["action=\"\"", "method=\"get\""]);
+        $this->html = new Tag(Tag::DIV, $form, $classes);
     }
-
-    /**
-     * @return string
-     */
-    public function display(): string
-    {
-        return $this->html;
-    }
-
-    private string $html;
 }

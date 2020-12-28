@@ -15,49 +15,49 @@ class Pages implements Iterator
             [
                 "title" => "Home",
                 "description" => "",
-                "color" => Color::PRIMARY,
+                "color" => Enums\Color::PRIMARY,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon_documents_alt icon\"></span>"
             ],
         "start.php" =>
             [
                 "title" => "Setting Up",
                 "description" => "Demo example, consectetuer adipiscing elit",
-                "color" => Color::GREEN,
+                "color" => Enums\Color::GREEN,
                 "icon" => "<i class=\"icon fa fa-paper-plane\"></i>"
             ],
         "charts.php" =>
             [
                 "title" => "GDD",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
-                "color" => Color::BLUE,
+                "color" => Enums\Color::BLUE,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_datareport_alt\"></span>"
             ],
         "components.php" =>
             [
                 "title" => "Class Documentation",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
-                "color" => Color::PINK,
+                "color" => Enums\Color::PINK,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_puzzle_alt\"></span>"
             ],
         "faqs.php" =>
             [
                 "title" => "FAQs",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
-                "color" => Color::PURPLE,
+                "color" => Enums\Color::PURPLE,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_lifesaver\"></span>"
             ],
         "showcase.php" =>
             [
                 "title" => "Showcase",
                 "description" => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
-                "color" => Color::PRIMARY,
+                "color" => Enums\Color::PRIMARY,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_genius\"></span>"
             ],
         "license.php" =>
             [
                 "title" => "License &amp; Credits",
                 "description" => "Layout for license &amp; credits page. Consectetuer adipiscing elit.",
-                "color" => Color::ORANGE,
+                "color" => Enums\Color::ORANGE,
                 "icon" => "<span aria-hidden=\"true\" class=\"icon icon_gift\"></span>"
             ],
     ];

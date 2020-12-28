@@ -4,7 +4,7 @@
 namespace StarForged;
 
 
-class QuestionSection
+class QuestionSection extends HtmlObject
 {
     /**
      * QuestionSection constructor.
@@ -14,23 +14,22 @@ class QuestionSection
     {
         $this->data = Extensions::LoadJson($filename);
         $this->title = $this->data['title'];
+        $this->buildHtml();
     }
 
-    public function display() : string
+    public function buildHtml() : void
     {
         $html = "<section id=\"" . strtolower($this->title) . "\" class=\"doc-section\">";
-        $html .= "<h2 class=\"section-title\">" . $this->title . "</h2>";
+        $html .= new Tag(Tag::HEADER2, $this->title, ["section-title"]);
 
         foreach ($this->data['questions'] as $question => $attributes)
         {
-            $question = new Question($question, $attributes['answer'], array_key_exists('tags', $attributes)
+            $html .= new Question($question, $attributes['answer'], array_key_exists('tags', $attributes)
                 ? $attributes['tags'] : []);
-
-            $html .= $question->display();
         }
 
         $html .= "</section>";
-        return $html;
+        $this->html = $html;
     }
 
     private string $title;

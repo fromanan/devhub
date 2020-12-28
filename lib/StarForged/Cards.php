@@ -4,19 +4,21 @@
 namespace StarForged;
 
 
-class Cards
+class Cards extends HtmlObject
 {
     public function __construct(array $pages)
     {
-        $html = "<div id=\"cards-wrapper\" class=\"cards-wrapper row\">";
+        $this->buildHtml($pages);
+    }
+
+    public function buildHtml(array $pages) : void
+    {
+        $body = "";
         foreach( $pages as $key => $item)
         {
             if ($key === "index.php") continue;
-            $card = new Card($item["color"], $item["title"], $item["description"], $key, $item["icon"]);
-            $html .= $card->display();
+            $body .= new Card($item["color"], $item["title"], $item["description"], $key, $item["icon"]);
         }
-        $html .= "</div><!--//cards-->";
-
-        echo $html;
+        $this->html = new Tag(Tag::DIV, $body, ["cards-wrapper", "row"], "cards-wrapper") . "<!--//cards-->";
     }
 }

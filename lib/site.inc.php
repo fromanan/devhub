@@ -3,8 +3,8 @@
 require __DIR__ . "/../vendor/autoload.php";
 
 $site = new StarForged\Site();
-$site->setLogo("StarForged", "Engine Specs");
-$site->setVersion("Version 1.0.00 – 3/6/2020");
+$site->setLogo("StarForged", "Developer Hub");
+$site->setVersion("Version 1.0.01 – 12/27/2020");
 $site->setTagline("The StarForged Advanced RPG Engine will be made available<br>for download as a versioned, compiled binary .dll file soon.");
 
 // Debugging

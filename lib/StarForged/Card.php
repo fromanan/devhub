@@ -4,7 +4,9 @@
 namespace StarForged;
 
 
-class Card
+
+
+class Card extends HtmlObject
 {
     public function __construct(string $color, string $title, string $body, string $link, string $icon)
     {
@@ -13,22 +15,17 @@ class Card
         $this->body = $body;
         $this->link = $link;
         $this->icon = $icon;
+        $this->buildHtml();
     }
 
-    public function display() : string
+    public function buildHtml(): void
     {
-        return <<<HTML
-<div class="item $this->color col-lg-4 col-6">
-    <div class="item-inner">
-        <div class="icon-holder">
-            $this->icon
-        </div><!--//icon-holder-->
-        <h3 class="title">$this->title</h3>
-        <p class="intro">$this->body</p>
-        <a class="link" href="$this->link"><span></span></a>
-    </div><!--//item-inner-->
-</div><!--//item-->
-HTML;
+        $icon = new Tag(Tag::DIV, $this->icon, ["icon-holder"]) . "<!--//icon-holder-->";
+        $block = new Block([$icon,
+            new Tag(Tag::HEADER3, $this->title, ["title"]),
+            new Tag(Tag::TEXT, $this->body, ["intro"]),
+            new Link(new Tag(Tag::SPAN), $this->link)]);
+        $this->html = new Tag(Tag::DIV, new Tag(Tag::DIV, $block, ["item-inner"]) . "<!--//item-inner-->", ["item", $this->color, "col-lg-4", "col-6"]) . "<!--//item-->";
     }
 
     private string $color;

@@ -8,4 +8,3 @@ echo "<br>";
 echo $x;
 echo "<br>";
 echo $y;
-?>

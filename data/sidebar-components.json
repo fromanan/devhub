@@ -1,0 +1,18 @@
+{
+  "Dashboards" : {
+    "link" : "#dashboards"
+  },
+  "App Components" : {
+    "link" : "#app-components",
+    "sublinks" : {
+      "Projects" : "#projects",
+      "Discussions" : "#discussions",
+      "Members" : "#members",
+      "User Account": "#account",
+      "Others": "#others"
+    }
+  },
+  "UI Components" : {
+    "link" : "#ui-components"
+  }
+}

@@ -3,15 +3,11 @@
 
 namespace StarForged;
 
-use StarForged\Enums\TagType as TagType;
 
-
-class CodeLine
+class CodeLine extends HtmlObject
 {
     public function __construct($content)
     {
-        $innerTag = new Tag("code", $content);
-        $outerTag = new Tag(TagType::TEXT, $innerTag->display());
-        echo $outerTag->display();
+        $this->html = new Tag(Tag::TEXT, new Tag(Tag::CODE, $content));
     }
 }

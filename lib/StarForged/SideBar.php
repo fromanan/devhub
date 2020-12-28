@@ -4,9 +4,8 @@
 namespace StarForged;
 
 
-class SideBar
+class SideBar extends HtmlObject
 {
-
     /**
      * SideBar constructor.
      * @param string $filename
@@ -14,11 +13,13 @@ class SideBar
     public function __construct(string $filename)
     {
         $pageData = Extensions::LoadJson($filename);
+        $this->buildHtml($pageData);
+    }
 
+    public function buildHtml(array $pageData) : void
+    {
         $html = "<div id=\"doc-nav\" class=\"doc-nav\">";
-
         $html .= "<nav id=\"doc-menu\" class=\"nav doc-menu flex-column sticky\">";
-
         foreach ($pageData as $section => $value)
         {
             $html .= "<a class=\"nav-link scrollto\" href=\"" . $value['link'] . "\">" . $section . "</a>";
@@ -35,10 +36,8 @@ class SideBar
                 $html .= "</nav>";
             }
         }
-
         $html .= "</nav><!--//doc-menu-->";
         $html .= "</div>";
-
-        echo $html;
+        $this->html = $html;
     }
 }

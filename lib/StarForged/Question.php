@@ -4,11 +4,14 @@
 namespace StarForged;
 
 
-class Question
+
+class Question extends HtmlObject
 {
     /**
      * Question constructor.
-     * @param $content
+     * @param $question
+     * @param $answers
+     * @param $tags
      */
     public function __construct($question, $answers, $tags)
     {
@@ -17,35 +20,27 @@ class Question
         $this->tags = $tags;
     }
 
-    public function display() : string
+    public function buildHtml() : void
     {
         $html = "<div class=\"section-block\">";
 
-        $html .= "<h3 class=\"question\"><i class=\"fas fa-question-circle\"></i> " . $this->question;
+        $html .= "<h3 class=\"question\">" . new Icon(Icon::QUESTION_CIRCLE) . " " . $this->question;
         foreach ($this->tags as $tag)
         {
             $html .= " ";
-            switch ($tag)
-            {
-                case 'new':
-                    $html .= "<span class=\"badge badge-success\">New</span>";
-                    break;
-                case 'updated':
-                    $html .= "<span class=\"badge badge-warning\">Updated</span>";
-                    break;
-            }
+            $html .= match ($tag) {
+                'new' => "<span class=\"badge badge-success\">New</span>",
+                'updated' => "<span class=\"badge badge-warning\">Updated</span>",
+            };
         }
         $html .= "</h3>";
 
         $html .= "<div class=\"answer\">";
-        foreach ($this->answers as $answer)
-        {
-            $html .= "<p>" . $answer . "</p>";
-        }
+        foreach ($this->answers as $answer) $html .= new Tag(Tag::TEXT, $answer);
         $html .= "</div>";
 
         $html .= "</div>";
-        return $html;
+        $this->html = $html;
     }
 
     private string $question;

@@ -9,14 +9,38 @@ class View
     public function __construct(Site $site, string $pageName)
     {
         $this->setTitle($site->getTitle($pageName));
+        $this->page = $site->getPage($pageName);
     }
 
-    public function head() : string
+    public function top($site, $breadcrumbs, $search): string
     {
-        return $this->title() . $this->meta() . $this->resources();
+        $html = $this->head();
+        if ($this->page["color"] == "default") {
+            $html .= "<body>";
+        } else {
+            $html .= "<body class=\"body-" . $this->page["color"] . "\">";
+        }
+        $html .= "<div class=\"page-wrapper\">";
+        $html .= $this->header($site, $breadcrumbs, $search);
+        return $html;
     }
 
-    public function meta() : string
+    public function bottom(): string
+    {
+        $html = "</div><!--//page-wrapper-->";
+        $html .= $this->footer();
+        $html .= $this->javascript();
+        $html .= "</body>";
+        $html .= "</html>";
+        return $html;
+    }
+
+    public function head(): string
+    {
+        return $html = "<!DOCTYPE html><html lang=\"en\">" . $this->title() . $this->meta() . $this->resources();
+    }
+
+    public function meta(): string
     {
         return <<<HTML
 <!-- Meta -->
@@ -28,56 +52,40 @@ class View
 HTML;
     }
 
-    public function header(Site $site, Breadcrumbs $breadcrumbs, Search $search) : string
+    public function header(Site $site, Breadcrumbs $breadcrumbs, Search $search): string
     {
-        $html = "<!-- ******Header****** --><header id=\"header\" class=\"header\"><div class=\"container\">";
-
-        $html .= "<div class=\"branding\">" . $site->showLogo(true) . "</div><!--//branding-->";
-
-        $html .= $breadcrumbs->display();
-
-        $html .= $search->display();
-
-        $html .= "</div><!--//container--></header><!--//header-->";
-
-        return $html;
+        $body = new Tag(Tag::DIV, $site->showLogo(true), ["branding"])."<!--//branding-->" . $breadcrumbs . $search;
+        return "<!-- ******Header****** -->" .
+            new Tag(Tag::HEADER, new Tag(Tag::DIV, $body, ["container"])."<!--//container-->", ["header"], "header")."<!--//header-->";
     }
 
-    public function footer() : string
+    public function footer(): string
     {
         // Copyright © 2019 Felis Investigations, Inc. All rights reserved.
-        return <<<HTML
-<footer class="footer text-center">
-    <div class="container">
-        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
-        <small class="copyright">StarForged Studios, LLC &copy; 2020</small>    
-    </div><!--//container-->
-</footer><!--//footer-->
-HTML;
+        return new Tag(Tag::FOOTER, new Tag(Tag::DIV, new Tag(Tag::SMALL, "StarForged Studios, LLC &copy; 2020", ["copyright"]), ["container"]), ["footer", "text-center"]);
     }
 
-    public function setTitle($title) : void
+    public function setTitle($title): void
     {
         $this->title = $title;
     }
 
-    public function title() : string
+    public function title(): string
     {
-        $title = new Tag("Title", $this->title . " | StarForged Engine");
-        return $title->display();
+        return new Tag("Title", $this->title . " | StarForged Engine");
     }
 
-    public function addLink($href, $text) : void
+    public function addLink($href, $text): void
     {
         $this->links[] = ["href" => $href, "text" => $text];
     }
 
-    protected function headerAdditional() : string
+    protected function headerAdditional(): string
     {
         return '';
     }
 
-    public function resources() : string
+    public function resources(): string
     {
         return <<<HTML
 <link rel="shortcut icon" href="favicon.ico">  
@@ -95,7 +103,7 @@ HTML;
 HTML;
     }
 
-    public function javascript() : string
+    public function javascript(): string
     {
         return <<<HTML
 <!-- Main Javascript -->   
@@ -109,6 +117,7 @@ HTML;
 HTML;
     }
 
-    private string $title;	// The page title
-    private array $links;	// Links to add to the nav bar
+    private string $title;    // The page title
+    private array $links;    // Links to add to the nav bar
+    private array $page;
 }
