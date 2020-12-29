@@ -4,6 +4,10 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Div;
+use StarForged\Tags\Script;
+use StarForged\Tags\Tag;
+
 class View
 {
     public function __construct(Site $site, string $pageName)
@@ -15,9 +19,11 @@ class View
     public function top($site, $breadcrumbs, $search): string
     {
         $html = $this->head();
-        if ($this->page["color"] == "default") {
+        if ($this->page["color"] == "default")
+        {
             $html .= "<body>";
-        } else {
+        } else
+        {
             $html .= "<body class=\"body-" . $this->page["color"] . "\">";
         }
         $html .= "<div class=\"page-wrapper\">";
@@ -54,15 +60,15 @@ HTML;
 
     public function header(Site $site, Breadcrumbs $breadcrumbs, Search $search): string
     {
-        $body = new Tag(Tag::DIV, $site->showLogo(true), ["branding"])."<!--//branding-->" . $breadcrumbs . $search;
+        $body = new Div($site->showLogo(true), ["branding"])."<!--//branding-->" . $breadcrumbs . $search;
         return "<!-- ******Header****** -->" .
-            new Tag(Tag::HEADER, new Tag(Tag::DIV, $body, ["container"])."<!--//container-->", ["header"], "header")."<!--//header-->";
+            new Tag(Tag::HEADER, new Div($body, ["container"])."<!--//container-->", ["header"], "header")."<!--//header-->";
     }
 
     public function footer(): string
     {
         // Copyright © 2019 Felis Investigations, Inc. All rights reserved.
-        return new Tag(Tag::FOOTER, new Tag(Tag::DIV, new Tag(Tag::SMALL, "StarForged Studios, LLC &copy; 2020", ["copyright"]), ["container"]), ["footer", "text-center"]);
+        return new Tag(Tag::FOOTER, new Div(new Tag(Tag::SMALL, "StarForged Studios, LLC &copy; 2020", ["copyright"]), ["container"]), ["footer", "text-center"]);
     }
 
     public function setTitle($title): void
@@ -87,6 +93,19 @@ HTML;
 
     public function resources(): string
     {
+        /*
+        $block = new Block();
+        $block->addTag(new Resource("favicon.ico", "shortcut icon"));
+        $block->addTag(new Resource("assets/css/open-sans.css", extraAttributes: ["type=\"text/css\""]));
+        $block->addTag("<!-- FontAwesome JS -->" . new Script("assets/js/all.js"));
+        $block->addTag("<!-- Global CSS -->" . new Resource("assets/plugins/bootstrap/css/bootstrap.min.css"));
+        $block->addTag("<!-- Plugins CSS -->" . new Resource("assets/plugins/prism/prism.css"));
+        $block->addTag(new Resource("assets/plugins/lightbox/dist/ekko-lightbox.css"));
+        $block->addTag(new Resource("assets/plugins/elegant_font/css/style.css"));
+        $block->addTag(new Resource("assets/css/styles.css", id: "theme-style"));
+        return $block;
+         */
+
         return <<<HTML
 <link rel="shortcut icon" href="favicon.ico">  
 <link rel="stylesheet" href="assets/css/open-sans.css" type="text/css">
@@ -105,16 +124,15 @@ HTML;
 
     public function javascript(): string
     {
-        return <<<HTML
-<!-- Main Javascript -->   
-<script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
-<script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
-<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
-<script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>   
-<script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                                
-<script type="text/javascript" src="assets/js/main.js"></script>
-HTML;
+        $scripts = ["assets/plugins/jquery-3.3.1.min.js", "assets/plugins/bootstrap/js/bootstrap.min.js",
+            "assets/plugins/prism/prism.js", "assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js",
+            "assets/plugins/lightbox/dist/ekko-lightbox.min.js", "assets/plugins/stickyfill/dist/stickyfill.min.js",
+            "assets/js/main.js"];
+
+        $block = new Block();
+        foreach ($scripts as $script)
+            $block->addTag(new Script($script));
+        return $block;
     }
 
     private string $title;    // The page title

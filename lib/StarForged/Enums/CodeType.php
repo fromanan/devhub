@@ -6,13 +6,13 @@ namespace StarForged\Enums;
 
 class CodeType
 {
-    const HTML = "language-markup";
-    const CSS = "language-css";
-    const SCSS = "language-css";
-    const LESS = "language-css";
-    const JS = "language-javascript";
-    const PY = "language-python";
-    const PHP = "language-php";
-    const HBS = "language-handlebars";
-    const GIT = "language-git";
+    const HTML = "markup";
+    const CSS = "css";
+    const SCSS = "css";
+    const LESS = "css";
+    const JS = "javascript";
+    const PY = "python";
+    const PHP = "php";
+    const HBS = "handlebars";
+    const GIT = "git";
 }

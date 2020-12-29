@@ -15,6 +15,6 @@ class IconButton extends HtmlObject
      */
     public function __construct(string $link, string $color, string $body, string $icon)
     {
-        $this->html = new Link($icon." ".$body, $link, ["btn", "btn-".$color]);
+        $this->html = new Link($icon." ".$body, $link, ["btn", "btn-".$color, "btn-cta"]);
     }
 }

@@ -4,6 +4,8 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Tag;
+
 class Breadcrumbs extends HtmlObject
 {
     public function __construct(Site $site, string $url, string $name)

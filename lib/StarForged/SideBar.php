@@ -4,6 +4,9 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Div;
+use StarForged\Tags\Tag;
+
 class SideBar extends HtmlObject
 {
     /**
@@ -18,26 +21,20 @@ class SideBar extends HtmlObject
 
     public function buildHtml(array $pageData) : void
     {
-        $html = "<div id=\"doc-nav\" class=\"doc-nav\">";
-        $html .= "<nav id=\"doc-menu\" class=\"nav doc-menu flex-column sticky\">";
+        $block = new Block();
         foreach ($pageData as $section => $value)
         {
-            $html .= "<a class=\"nav-link scrollto\" href=\"" . $value['link'] . "\">" . $section . "</a>";
+            $block->addTag(new Link($section, $value['link'], ["nav-link", "scrollto"]));
 
-            if (array_key_exists('sublinks', $value))
-            {
-                $html .= "<nav class=\"doc-sub-menu nav flex-column\">";
+            if (!array_key_exists('sublinks', $value)) continue;
 
-                foreach ($value['sublinks'] as $sublink => $link)
-                {
-                    $html .= "<a class=\"nav-link scrollto\" href=\"" . $link . "\">" . $sublink . "</a>";
-                }
+            $innerBlock = new Block();
+            foreach ($value['sublinks'] as $subsection => $link)
+                $innerBlock->addTag(new Link($subsection, $link, ["nav-link", "scrollto"]));
 
-                $html .= "</nav>";
-            }
+            $block->addTag(new Tag(Tag::NAV, $innerBlock, ["doc-sub-menu", "nav", "flex-column"]));
         }
-        $html .= "</nav><!--//doc-menu-->";
-        $html .= "</div>";
-        $this->html = $html;
+        $menu = new Tag(Tag::NAV, $block, ["nav", "doc-menu", "flex-column", "sticky"], "doc-menu");
+        $this->html = new Div($menu . "<!--//doc-menu-->", ["doc-nav"], "doc-nav");
     }
 }

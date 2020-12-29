@@ -4,6 +4,8 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Tag;
+
 class Section extends HtmlObject
 {
     /**
@@ -15,8 +17,9 @@ class Section extends HtmlObject
      */
     public function __construct(string $title, string $id, string $body, array $classes=[])
     {
-        $block = new Block([new Tag(Tag::HEADER2, $title, ["section-title"]),
-            new Tag(Tag::DIV, $body, ["section-block"]) . "<!--//doc-section-->"]);
-        $this->html = new Tag(Tag::SECTION, $block, $classes, $id);
+        $block = new Block();
+        $block->addTag(new Tag(Tag::HEADER2, $title, ["section-title"]));
+        $block->addTag(new SectionBlock($body));
+        $this->html = new Tag(Tag::SECTION, $block, $classes, $id) . "<!--//doc-section-->";
     }
 }

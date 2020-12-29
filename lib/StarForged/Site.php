@@ -4,6 +4,10 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Div;
+use StarForged\Tags\Span;
+use StarForged\Tags\Tag;
+
 class Site
 {
     public function __construct()
@@ -24,13 +28,11 @@ class Site
 
     public function showLogo(bool $link = false) : string
     {
-        $title = $this->logo["title"];
-        $subtitle = $this->logo["subtitle"];
-        $body = new Tag(Tag::SPAN, "", ["icon_documents_alt icon"], "", ["aria-hidden=\"true\""]);
-        $body .= new Tag(Tag::SPAN, $title, ["text-highlight"]);
-        $body .= new Tag(Tag::SPAN, "&nbsp;".$subtitle, ["text-bold"]);
-        if ($link) $body = new Link($body, "index.php");
-        return new Tag(Tag::HEADER1, $body, ["logo"]);
+        $body = new Block();
+        $body->addTag(new Span(classes: ["icon_documents_alt icon"], attributes: ["aria-hidden=\"true\""]));
+        $body->addTag(new Span($this->logo["title"], ["text-highlight"]));
+        $body->addTag(new Span("&nbsp;".$this->logo["subtitle"], ["text-bold"]));
+        return new Tag(Tag::HEADER1, $link ? new Link($body, "index.php") : $body, ["logo"]);
     }
 
     public function getVersion(): string
@@ -86,7 +88,7 @@ class Site
         if (array_key_exists($pageName, $this->pages))
         {
             $date = date_format(date_create_from_format('m-d-y', $this->pages[$pageName]["updated"]), 'M jS, Y');
-            return "<div class=\"meta\"><i class=\"far fa-clock\"></i> Last updated: " . $date . "</div>";
+            return new Div(new Icon(Icon::CLOCK, Icon::FAR) . " Last updated: " . $date, ["meta"]);
         }
         return "";
     }

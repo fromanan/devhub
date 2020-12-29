@@ -4,7 +4,10 @@
 namespace StarForged;
 
 
-
+use StarForged\Tags\Div;
+use StarForged\Tags\Span;
+use StarForged\Tags\Tag;
+use StarForged\Tags\Text;
 
 class Card extends HtmlObject
 {
@@ -20,12 +23,13 @@ class Card extends HtmlObject
 
     public function buildHtml(): void
     {
-        $icon = new Tag(Tag::DIV, $this->icon, ["icon-holder"]) . "<!--//icon-holder-->";
-        $block = new Block([$icon,
-            new Tag(Tag::HEADER3, $this->title, ["title"]),
-            new Tag(Tag::TEXT, $this->body, ["intro"]),
-            new Link(new Tag(Tag::SPAN), $this->link)]);
-        $this->html = new Tag(Tag::DIV, new Tag(Tag::DIV, $block, ["item-inner"]) . "<!--//item-inner-->", ["item", $this->color, "col-lg-4", "col-6"]) . "<!--//item-->";
+        $block = new Block();
+        $block->addTag(new Div($this->icon, ["icon-holder"]) . "<!--//icon-holder-->");
+        $block->addTag(new Tag(Tag::HEADER3, $this->title, ["title"]));
+        $block->addTag(new Text($this->body, ["intro"]));
+        $block->addTag(new Link(new Span(), $this->link, ["link"]));
+        $inner = new Div($block, ["item-inner"]) . "<!--//item-inner-->";
+        $this->html = new Div($inner, ["item", $this->color, "col-lg-4", "col-6"]) . "<!--//item-->";
     }
 
     private string $color;

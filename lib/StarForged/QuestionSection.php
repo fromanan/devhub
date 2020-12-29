@@ -19,17 +19,10 @@ class QuestionSection extends HtmlObject
 
     public function buildHtml() : void
     {
-        $html = "<section id=\"" . strtolower($this->title) . "\" class=\"doc-section\">";
-        $html .= new Tag(Tag::HEADER2, $this->title, ["section-title"]);
-
+        $block = new Block();
         foreach ($this->data['questions'] as $question => $attributes)
-        {
-            $html .= new Question($question, $attributes['answer'], array_key_exists('tags', $attributes)
-                ? $attributes['tags'] : []);
-        }
-
-        $html .= "</section>";
-        $this->html = $html;
+            $block->addTag(new Question($question, $attributes['answer'], array_key_exists('tags', $attributes) ? $attributes['tags'] : []));
+        $this->html = new Section($this->title, strtolower($this->title), $block, ["doc-section"]);
     }
 
     private string $title;

@@ -5,6 +5,7 @@ namespace StarForged;
 
 
 use Iterator;
+use JetBrains\PhpStorm\Pure;
 
 class Pages implements Iterator
 {
@@ -108,7 +109,7 @@ class Pages implements Iterator
         return isset($this->array[$this->position]);
     }
 
-    public function contains(string $pageName) : bool
+    #[Pure] public function contains(string $pageName) : bool
     {
         return array_key_exists($pageName, $this->pages);
     }

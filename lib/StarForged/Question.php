@@ -5,6 +5,9 @@ namespace StarForged;
 
 
 
+use StarForged\Tags\Div;
+use StarForged\Tags\Span;
+
 class Question extends HtmlObject
 {
     /**
@@ -18,29 +21,28 @@ class Question extends HtmlObject
         $this->question = $question;
         $this->answers = $answers;
         $this->tags = $tags;
+        $this->buildHtml();
     }
 
     public function buildHtml() : void
     {
-        $html = "<div class=\"section-block\">";
+        $title = new Icon(Icon::QUESTION_CIRCLE) . " " . $this->question . $this->tagString();
+        $body = new Div(Block::fromData($this->answers, "StarForged\Tags\Text"), ["answer"]);
+        $this->html = new SectionBlock($body, $title, titleClasses: ["question"]);
+    }
 
-        $html .= "<h3 class=\"question\">" . new Icon(Icon::QUESTION_CIRCLE) . " " . $this->question;
+    private function tagString() : string
+    {
+        $block = new Block();
         foreach ($this->tags as $tag)
         {
-            $html .= " ";
-            $html .= match ($tag) {
-                'new' => "<span class=\"badge badge-success\">New</span>",
-                'updated' => "<span class=\"badge badge-warning\">Updated</span>",
-            };
+            $block->addTag(" " . match ($tag)
+                {
+                    'new' => new Span("New", ["badge", "badge-success"]),
+                    'updated' => new Span("Updated", ["badge", "badge-warning"])
+                });
         }
-        $html .= "</h3>";
-
-        $html .= "<div class=\"answer\">";
-        foreach ($this->answers as $answer) $html .= new Tag(Tag::TEXT, $answer);
-        $html .= "</div>";
-
-        $html .= "</div>";
-        $this->html = $html;
+        return $block;
     }
 
     private string $question;

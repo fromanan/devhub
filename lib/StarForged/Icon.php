@@ -4,6 +4,8 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Tag;
+
 class Icon extends HtmlObject
 {
     /**
@@ -30,6 +32,8 @@ class Icon extends HtmlObject
     const EXCLAMATION_TRIANGLE = "fa-exclamation-triangle";
     const QUESTION_CIRCLE = "fa-question-circle";
     const SEARCH = "fa-search";
+    const CLOCK = "fa-clock";
+    const CLOUD_ALT = "fa-cloud-download-alt";
     #endregion
 
     #region IconStyles

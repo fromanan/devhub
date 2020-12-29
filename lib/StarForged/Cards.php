@@ -4,6 +4,8 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Div;
+
 class Cards extends HtmlObject
 {
     public function __construct(array $pages)
@@ -19,6 +21,6 @@ class Cards extends HtmlObject
             if ($key === "index.php") continue;
             $body .= new Card($item["color"], $item["title"], $item["description"], $key, $item["icon"]);
         }
-        $this->html = new Tag(Tag::DIV, $body, ["cards-wrapper", "row"], "cards-wrapper") . "<!--//cards-->";
+        $this->html = new Div($body, ["cards-wrapper", "row"], "cards-wrapper") . "<!--//cards-->";
     }
 }

@@ -1,8 +1,11 @@
 <?php
 
 
-namespace StarForged;
+namespace StarForged\Tags;
 
+
+use StarForged\Block;
+use StarForged\HtmlObject;
 
 class Tag extends HtmlObject
 {
@@ -18,28 +21,13 @@ class Tag extends HtmlObject
 
     public function buildHtml() : void
     {
-        $html = "<$this->tagType";
-
-        if ($this->id !== "")
-        {
-            $html .= " id=\"$this->id\"";
-        }
-
-        if (count($this->classes) > 0)
-        {
-            $html .= " class=\"" . implode(" ", $this->classes) . "\"";
-        }
-
-        if (count($this->attributes) > 0)
-        {
-            $html .= " " . implode(" ", $this->attributes);
-        }
-
-        $html .= ">";
-        $html .= $this->body;
-        $html .= "</$this->tagType>";
-
-        $this->html = $html;
+        $block = new Block();
+        $block->addTag("<$this->tagType");
+        if ($this->id !== "") $block->addTag(" id=\"$this->id\"");
+        if (count($this->classes) > 0) $block->addTag(" class=\"" . implode(" ", $this->classes) . "\"");
+        if (count($this->attributes) > 0) $block->addTag(" " . implode(" ", $this->attributes));
+        $block->addTag(">" . $this->body . "</$this->tagType>");
+        $this->html = $block;
     }
 
     private string $tagType;
@@ -80,5 +68,6 @@ class Tag extends HtmlObject
     const SCRIPT = "script";
     const BUTTON = "button";
     const INPUT = "input";
+    const NAV = "nav";
     #endregion
 }

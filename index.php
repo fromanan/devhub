@@ -3,8 +3,12 @@ require 'lib/site.inc.php';
 $name = StarForged\Extensions::GetPageName();
 $view = new StarForged\View($site, $name);
 
+use StarForged\Icon;
+use StarForged\IconButton;
 use StarForged\Cards as Cards;
-use StarForged\Tag as Tag;
+use StarForged\Enums\Color;
+use StarForged\Tags\Div;
+use StarForged\Tags\Tag;
 
 ?>
 
@@ -14,15 +18,11 @@ use StarForged\Tag as Tag;
     <!-- ******Header****** -->
     <header class="header text-center">
         <div class="container">
-            <div class="branding">
-                <?php echo $site->showLogo() ?>
-                <?php echo $site->showVersion(Tag::HEADER2) ?>
-            </div><!--//branding-->
-
-            <?php echo $site->showTagline(Tag::DIV) ?>
-
-            <?php echo new StarForged\Search(["main-search-box", "pt-3", "pb-4", "d-inline-block"]) ?>
-
+            <?php
+                echo new Div($site->showLogo() . $site->showVersion(Tag::HEADER2), ["branding"]) . "<!--//branding-->";
+                echo $site->showTagline(Tag::DIV);
+                echo new StarForged\Search(["main-search-box", "pt-3", "pb-4", "d-inline-block"]);
+            ?>
         </div><!--//container-->
     </header><!--//header-->
 
@@ -32,9 +32,10 @@ use StarForged\Tag as Tag;
             <div class="intro">
                 <p>Welcome to prettyDocs. This landing page is an example of how you can use a card view to present segments of your documentation. You can customise the icon fonts based on your needs.</p>
                 <div class="cta-container">
-                    <a class="btn btn-primary btn-cta"
-                       href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/"
-                       target="_blank"><i class="fas fa-cloud-download-alt"></i> Download Now</a>
+                    <?php
+                    $link = "https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/";
+                    echo new IconButton($link, Color::PRIMARY, "Download Now", new Icon(Icon::CLOUD_ALT));
+                    ?>
                 </div><!--//cta-container-->
             </div><!--//intro-->
             <?php echo new Cards($site->getPages()) ?>

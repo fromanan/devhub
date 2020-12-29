@@ -65,7 +65,7 @@ $search = new StarForged\Search(["top-search-box"]);
                             $data = array();
                             foreach (StarForged\Extensions::LoadJson("data/license-links.json") as $title => $link)
                                 $data[] = new ExternalLink($title, $link, "<i class=\"fas fa-external-link-square-alt\"></i>");
-                            echo new UnorderedList($data, ["list-unstyled"])
+                            echo new UnorderedList($data, ["list", "list-unstyled"])
                             ?>
                         </div><!--//section-block-->
                     </section><!--//doc-section-->

@@ -4,20 +4,25 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Div;
+use StarForged\Tags\Tag;
 
-
-class SectionBlock extends HtmlObject
+class SectionBlock extends TitleBlock
 {
     /**
      * SectionBlock constructor.
+     * @param string $body
      * @param string $title
      * @param string $id
-     * @param string $body
      * @param array $classes
+     * @param string $fontSize
+     * @param array $titleClasses
+     * @param bool $useDefaults
      */
-    public function __construct(string $title, string $id, string $body, array $classes=[])
+    public function __construct(string $body, string $title="", string $id="", array $classes=[], string $fontSize=Tag::HEADER3, array $titleClasses=[], bool $useDefaults=true)
     {
-        $text = new Tag(Tag::HEADER3, $title, ["block-title"]) . $body;
-        $this->html = new Tag(Tag::DIV, $text, array_merge(["section-block"], $classes), $id) . "<!--//section-block-->";
+        $titleClasses = $useDefaults ? array_merge(["block-title"], $titleClasses) : $titleClasses;
+        $classes = $useDefaults ? array_merge(["section-block"], $classes) : $classes;
+        return parent::__construct($body . "<!--//section-block-->", $title, $id, $classes, $fontSize, $titleClasses);
     }
 }

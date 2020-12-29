@@ -4,6 +4,8 @@
 namespace StarForged;
 
 
+use StarForged\Tags\Div;
+
 class ImageLink extends HtmlObject
 {
     /**
@@ -20,6 +22,6 @@ class ImageLink extends HtmlObject
     {
         $block = new Block([new ExternalLink("", $link, "", ["mask"], $image),
             new ExternalLink("", $link, "<i class=\"icon fa fa-link\"></i>", ["mask"])]);
-        $this->html = new Tag(Tag::DIV, $block, ["screenshot-holder"]);
+        $this->html = new Div($block, ["screenshot-holder"]);
     }
 }

@@ -20,6 +20,6 @@ class ExternalLink extends HtmlObject
         if ($icon !== "") $tagBody .= $icon;
         if ($title !== "") $tagBody .= " " . $title;
         if ($body !== "") $tagBody .= $body;
-        $this->html = new Link($tagBody, $link, $classes, "_blank");
+        $this->html = new Link($tagBody, $link, $classes, Link::BLANK);
     }
 }
