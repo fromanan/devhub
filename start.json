@@ -1,0 +1,40 @@
+{
+  "SectionBlock": {
+    "body": {
+      "Text": {
+        "Block": {
+          "1_Link": {
+            "body": "PrismJS",
+            "link": "https://prismjs.com/",
+            "target": "_blank"
+          },
+          "2_": " is used as the syntax highlighter here. You can ",
+
+            "body": "build your own version",
+            "link": "https://prismjs.com/download.html",
+            "target": "_blank"
+          },
+          "4_": " via their website should you need to."
+        },
+        "CalloutBlock": {
+          "calloutType": "callout-success",
+          "title": "Useful Tip:",
+          "body": {
+            "Block": {
+              "1_": "You can use this online ",
+              "2_Link": {
+                "body": "HTML entity encoder/decoder",
+                "link": "https://mothereff.in/html-entities",
+                "target": "_blank"
+              },
+              "3_": " to generate your code examples."
+            }
+          }
+        }
+      }
+    },
+    "classes": [
+      "section-block"
+    ]
+  }
+}

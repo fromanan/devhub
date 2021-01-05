@@ -69,5 +69,6 @@ class Tag extends HtmlObject
     const BUTTON = "button";
     const INPUT = "input";
     const NAV = "nav";
+    const BOLD = "strong";
     #endregion
 }

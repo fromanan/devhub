@@ -34,6 +34,8 @@ class Icon extends HtmlObject
     const SEARCH = "fa-search";
     const CLOCK = "fa-clock";
     const CLOUD_ALT = "fa-cloud-download-alt";
+    const HEART = "fa-heart";
+    const EXTERNAL_LINK = "fa-external-link-alt";
     #endregion
 
     #region IconStyles

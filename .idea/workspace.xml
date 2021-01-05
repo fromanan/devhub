@@ -2,50 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80b6cedf-fe41-49ce-b493-868b6516f5df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Column.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Document.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/PageBuilder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/PageEditor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Row.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Div.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Iframe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Resource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Script.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Span.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Text.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/StarForged/TitleBlock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/StarForged/Emphasis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/demo/fontawesome-icons.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/demo/fontawesome-icons.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Block.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Block.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/CalloutBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/CalloutBlock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Card.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Card.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Cards.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Cards.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/CodeBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/CodeBlock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/CodeLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/CodeLine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Enums/CodeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Enums/CodeType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Enums/VideoRatio.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/ExternalLink.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/ExternalLink.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/StarForged/Icon.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Icon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/IconButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/IconButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/ImageLink.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/ImageLink.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/StarForged/Link.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Link.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/OrderedList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/OrderedList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Question.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/QuestionSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/QuestionSection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Section.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Section.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/SectionBlock.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/SectionBlock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/SideBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/SideBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Site.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Site.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/UnorderedList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/UnorderedList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Unused/Pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Unused/Pages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/StarForged/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/license.php" beforeDir="false" afterPath="$PROJECT_DIR$/license.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/PageBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/PageBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/StarForged/Tags/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/StarForged/Tags/Tag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.php" beforeDir="false" afterPath="$PROJECT_DIR$/start.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,6 +162,9 @@
       <workItem from="1609113839201" duration="16277000" />
       <workItem from="1609132165503" duration="5563000" />
       <workItem from="1609189271958" duration="20435000" />
+      <workItem from="1609547363512" duration="3545000" />
+      <workItem from="1609564440014" duration="5193000" />
+      <workItem from="1609629256326" duration="4089000" />
     </task>
     <servers />
   </component>

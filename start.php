@@ -10,6 +10,7 @@ use StarForged\Block;
 use StarForged\Button;
 use StarForged\Column;
 use StarForged\Document;
+use StarForged\Emphasis;
 use StarForged\IconButton;
 use StarForged\CalloutBlock;
 use StarForged\Enums\CalloutType;
@@ -26,8 +27,10 @@ use StarForged\Section;
 use StarForged\SectionBlock;
 use StarForged\Table;
 use StarForged\Enums\TableType;
+use StarForged\Tags\Div;
 use StarForged\Tags\Tag;
 use StarForged\Tags\Text;
+use StarForged\TitleBlock;
 use StarForged\UnorderedList;
 use StarForged\Video;
 
@@ -38,7 +41,7 @@ $documentSections = new Block();
 
 
 $body = new Block();
-$body->addTag(new Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et  dapibus feugiat <a href=\"#\">link example</a> aenean purus leo, faucibus at elit vel,  aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet,  imperdiet odio. Aenean sem erat, hendrerit eu gravida id, dignissim ut ante. Nam  consequat porttitor libero euismod congue."));
+$body->addTag(new Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et  dapibus feugiat ".new Link("Link example")." aenean purus leo, faucibus at elit vel,  aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet,  imperdiet odio. Aenean sem erat, hendrerit eu gravida id, dignissim ut ante. Nam  consequat porttitor libero euismod congue."));
 $body->addTag(new IconButton("https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/", Color::GREEN, "Download PrettyDocs", new Icon(Icon::DOWNLOAD)));
 $documentSections->addTag(new Section("Download", "download-section", $body, ["doc-section"]));
 
@@ -80,8 +83,8 @@ $documentSections->addTag(new Section("Installation", "installation-section", $s
 $sectionBlock = new Block();
 
     $block = new Block();
-    $block->addTag(new Text("<a href=\"https://prismjs.com/\" target=\"_blank\">PrismJS</a> is used as the syntax highlighter here. You can <a href=\"https://prismjs.com/download.html\" target=\"_blank\">build your own version</a> via their  website should you need to."));
-    $block->addTag(new CalloutBlock(CalloutType::SUCCESS, "Useful Tip:", "You can use this online <a href=\"https://mothereff.in/html-entities\" target=\"_blank\">HTML entity encoder/decoder</a> to generate your code examples."));
+    $block->addTag(new Text(new Link("PrismJS", "https://prismjs.com/", target: Link::BLANK)." is used as the syntax highlighter here. You can ".new Link("build your own version", "https://prismjs.com/download.html", target: Link::BLANK)." via their  website should you need to."));
+    $block->addTag(new CalloutBlock(CalloutType::SUCCESS, "Useful Tip:", "You can use this online ".new Link("HTML entity encoder/decoder", "https://mothereff.in/html-entities", target: Link::BLANK)." to generate your code examples."));
     $sectionBlock->addTag(new SectionBlock($block, classes: ["section-block"]));
 
     $html = new CodeBlock("HTML Code Example", CodeType::HTML, "examples/html-example.html", true);
@@ -122,16 +125,16 @@ $sectionBlock = new Block();
 
     $block = new Block();
 
-        $infoBody = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <code>&lt;code&gt;</code> , Nemo enim ipsam voluptatem quia voluptas <a href=\"#\">link example</a> sit aspernatur aut odit aut fugit.";
+        $infoBody = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <code>&lt;code&gt;</code> , Nemo enim ipsam voluptatem quia voluptas ".new Link("Link example")." sit aspernatur aut odit aut fugit.";
         $block->addTag(new CalloutBlock(CalloutType::INFO, "Aenean imperdiet", $infoBody));
 
-        $warningBody = "Nunc hendrerit odio quis dignissim efficitur. Proin ut finibus libero. Morbi posuere fringilla felis eget sagittis. Fusce sem orci, cursus in tortor <a href=\"#\">link example</a> tellus vel diam viverra elementum.";
+        $warningBody = "Nunc hendrerit odio quis dignissim efficitur. Proin ut finibus libero. Morbi posuere fringilla felis eget sagittis. Fusce sem orci, cursus in tortor ".new Link("Link example")." tellus vel diam viverra elementum.";
         $block->addTag(new CalloutBlock(CalloutType::WARNING, "Morbi posuere", $warningBody));
 
-        $successBody = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <a href=\"#\">Link example</a> aenean commodo ligula eget dolor.";
+        $successBody = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ".new Link("Link example")." aenean commodo ligula eget dolor.";
         $block->addTag(new CalloutBlock(CalloutType::SUCCESS, "Lorem ipsum dolor sit amet", $successBody));
 
-        $dangerBody = "Morbi eget interdum sapien. Donec sed turpis sed nulla lacinia accumsan vitae ut tellus. Aenean vestibulum <a href=\"#\">Link example</a> maximus ipsum vel dignissim. Morbi ornare elit sit amet massa feugiat, viverra dictum ipsum pellentesque. ";
+        $dangerBody = "Morbi eget interdum sapien. Donec sed turpis sed nulla lacinia accumsan vitae ut tellus. Aenean vestibulum ".new Link("Link example")." maximus ipsum vel dignissim. Morbi ornare elit sit amet massa feugiat, viverra dictum ipsum pellentesque. ";
         $block->addTag(new CalloutBlock(CalloutType::DANGER, "Interdum et malesuada", $dangerBody));
 
     $sectionBlock->addTag(new SectionBlock($block));
@@ -157,7 +160,7 @@ $documentSections->addTag(new Section("Tables", "tables-section", $sectionBlock,
 
 $body = new Block();
 
-    $body->addTag(new Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et  dapibus feugiat <a href=\"#\">link example</a> aenean purus leo, faucibus at elit vel,  aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit eu gravida id, dignissim ut ante. Nam  consequat porttitor libero euismod congue."));
+    $body->addTag(new Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et  dapibus feugiat ".new Link("Link example")." aenean purus leo, faucibus at elit vel,  aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit eu gravida id, dignissim ut ante. Nam  consequat porttitor libero euismod congue."));
 
     $columns = new Block();
 
@@ -221,7 +224,7 @@ $documentSections->addTag(new Section("Video", "video-section", $body, ["doc-sec
 
 $block = new Block();
 
-    $text = new Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat <a href=\"#\">link example</a> aenean purus leo, faucibus at elit vel, aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit eu gravida id, dignissim ut ante. Nam consequat porttitor libero euismod congue.");
+    $text = new Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat ".new Link("Link example")." aenean purus leo, faucibus at elit vel, aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit eu gravida id, dignissim ut ante. Nam consequat porttitor libero euismod congue.");
     $block->addTag(new SectionBlock($text));
 
     $image = new Image("assets/images/demo/elegant-icon-font.jpg", "elegant icons", ["img-fluid"]);
@@ -236,33 +239,44 @@ $documentSections->addTag(new Section("Icons", "icons-section", $block, ["doc-se
 
 echo Document::SidebarDocument($site, $name, $documentSections, "data\sidebar-start.json");
 
-?>
+$link = "https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/";
 
-<div id="promo-block" class="promo-block">
-    <div class="container">
-        <div class="promo-block-inner">
-            <h3 class="promo-title text-center"><i class="fas fa-heart"></i> <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"  target="_blank">Are you an ambitious and entrepreneurial developer?</a></h3>
-            <div class="row">
-                <div class="figure-holder col-lg-5 col-md-6 col-12">
-                    <div class="figure-holder-inner">
-                        <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"  target="_blank"><img class="img-fluid" src="assets/images/demo/instance-promo.jpg"  alt="Instance Theme"/></a>
-                        <a class="mask" href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"><i class="icon fa fa-heart pink"></i></a>
-                    </div>
-                </div><!--//figure-holder-->
-                <div class="content-holder col-lg-7 col-md-6 col-12">
-                    <div class="content-holder-inner">
-                        <div class="desc">
-                            <h4 class="content-title"><strong> Instance - Bootstrap 4 Portfolio Theme for Aspiring Developers</strong></h4>
-                            <p>Check out <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Instance</a> - a Bootstrap personal portfolio theme I  created for developers. The UX design is focused on selling a developer’s skills and experience to potential employers or clients, and has <strong class="highlight">all the winning ingredients to get you hired</strong>. It’s not only a HTML site template but also a marketing framework for you to <strong class="highlight">build an impressive online presence with a high conversion rate</strong>. </p>
-                            <p><strong class="highlight">[Tip for developers]:</strong> If your project is Open Source, you can use this area to promote your other projects or hold third party adverts like Bootstrap and FontAwesome do!</p>
-                            <a class="btn btn-cta" href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i> View Demo</a>
-                        </div><!--//desc-->
-                        <div class="author"><a href="https://themes.3rdwavemedia.com">Xiaoying Riley</a></div>
-                    </div><!--//content-holder-inner-->
-                </div><!--//content-holder-->
-            </div><!--//row-->
-        </div><!--//promo-block-inner-->
-    </div><!--//container-->
-</div><!--//promo-block-->
-<?php echo $view->bottom() ?>
+$contents = new Block();
+
+    $rowContents = new Block();
+
+        $block = new Block();
+            $block->addTag(new Link(new Image("assets/images/demo/instance-promo.jpg", "Instance Theme", ["img-fluid"]), $link, target: Link::BLANK));
+            $block->addTag(new Link(new Icon(Icon::HEART, Icon::FA . " pink"), $link, ["mask"]));
+        $rowContents->addTag(new Column(new Div($block, ["figure-holder-inner"]), ["figure-holder", "col-lg-5", "col-md-6", "col-12"]) . "<!--//figure-holder-->");
+
+        $block = new Block();
+
+            $title = new Emphasis(" Instance - Bootstrap 4 Portfolio Theme for Aspiring Developers");
+
+            $body = new Block();
+
+            $innerText = "Check out " . new Link("Instance", $link, target: Link::BLANK) . " - a Bootstrap personal portfolio theme I created for developers. The UX design is focused on selling a developer’s skills and experience to potential employers or clients, and has " . new Emphasis("all the winning ingredients to get you hired") . ". It’s not only a HTML site template but also a marketing framework for you to " . new Emphasis("build an impressive online presence with a high conversion rate") . ". ";
+            $body->addTag(new Text($innerText));
+
+            $innerText = new Emphasis("[Tip for developers]:") . " If your project is Open Source, you can use this area to promote your other projects or hold third party adverts like Bootstrap and FontAwesome do!";
+            $body->addTag(new Text($innerText));
+
+            $body->addTag(new Link(new Icon(Icon::EXTERNAL_LINK) . " View Demo", $link, ["btn", "btn-cta"], Link::BLANK));
+
+            $block->addTag(new TitleBlock($body, $title, "", ["desc"], Tag::HEADER4, ["content-title"]));
+
+            $block->addTag(new Div(new Link("Xiaoying Riley", "https://themes.3rdwavemedia.com"), ["author"]));
+
+            $innerContent = new Div($block, ["content-holder-inner"]) . "<!--//content-holder-inner-->";
+
+        $rowContents->addTag(new Column($innerContent, ["content-holder", "col-lg-7", "col-md-6", "col-12"]) . "<!--//content-holder-->");
+
+    $title = new Icon(Icon::HEART) . " " . new Link("Are you an ambitious and entrepreneurial developer?", $link, target: Link::BLANK);
+
+    $contents->addTag(new TitleBlock(new Row($rowContents), $title, "", ["promo-block-inner"], Tag::HEADER3, ["promo-title", "text-center"]) . "<!--//promo-block-inner-->");
+
+echo new Div(new Div($contents, ["container"]) . "<!--//container-->", ["promo-block"], "promo-block") . "<!--//promo-block-->";
+
+echo $view->bottom();
 

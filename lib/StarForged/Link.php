@@ -15,7 +15,7 @@ class Link extends HtmlObject
      * @param array $classes
      * @param string $target
      */
-    public function __construct(string $body, string $link, array $classes=[], string $target=Link::SELF)
+    public function __construct(string $body, string $link="#", array $classes=[], string $target=Link::SELF)
     {
         $attributes = ["href=\"".$link."\"", "target=\"".$target."\""];
         $this->html = new Tag(Tag::ANCHOR, $body, $classes, "", $attributes);
