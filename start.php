@@ -237,7 +237,7 @@ $block = new Block();
 
 $documentSections->addTag(new Section("Icons", "icons-section", $block, ["doc-section"]));
 
-echo Document::SidebarDocument($site, $name, $documentSections, "data\sidebar-start.json");
+echo Document::SidebarDocument($site, $name, $documentSections, "data/sidebar-start.json");
 
 $link = "https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/";
 
